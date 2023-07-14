@@ -1,0 +1,98 @@
+
+<div class="container01">
+  <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" type="text/css" href="sauna.css" />
+      <title>Link CSS to HTML</title>
+  </head>
+  <script src="sauna.js"></script>
+  <!-- calendar -->
+  <div class="card calendar">
+    <div class="card-header">
+      <h3 class="card-title monthAndYear"></h3>
+      <div class="btn-group nav01">
+        <i class="fas fa-caret-left fa-5x btnPrevious"></i>
+          <span>&nbsp;</span>
+        <i class="fas fa-caret-right fa-5x btnNext"></i>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead></thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+    <div class="card-footer">
+      <button type="button" class="btn btn-outline-secondary btn-lg btnList"><i class="fas fa-angle-right fa-1x"></i>&nbsp;List Events</i></button>
+    <form class="form-inline jumpto">
+      <label class="lead mr-2 ml-2"><i class="fas fa-angle-right fa-1x"></i>&nbsp;Jump to :</label>
+      <select class="form-control" name="month" id="month"></select>
+      <select class="form-control" name="year" id="year"></select>
+    </form>
+  </div>
+ </div>
+
+<!-- modal-Event-->
+<div class="modal modal-event fade-in" hidden>
+  <div class="modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn btn-outline-secondary btn-lg btnClose"><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <form class="form-inline modal-input">
+        <div class="modal-body">
+          <div class="input-group input-group-lg">
+            <input type="text" class="form-control modal-input" placeholder="Add event...">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-primary btnSubmit"><i class="fas fa-plus fa-2x"></i></button>
+            <button type="button" class="btn btn-outline-success btnUpdateModal"><i class="fas fa-check  fa-2x"></i></button>
+            <button type="reset" class="btn btn-outline-danger btnReset"><i class="fas fa-undo-alt fa-2x"></i></button>
+            <button type="button" class="btn btn-outline-danger btnRemove"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-outline-primary btn-lg btnList" data-bs-target=".modal-list" data-bs-toggle="modal"><i class="far fa-paper-plane fa-2x"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+ <!-- modal-List events -->
+<div class="modal card-body modal-list fade-in" hidden>
+  <div class="modal-dialog modal-dialog-scrollable-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header-list">
+        <h3 class="modal-title title-list">- List Events -</h3>
+        <button type="button" class="btn btn-outline-secondary btn-lg btnClose"><i class="fas fa-times fa-2x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-group card-form list-form">
+          <label for="input-list" class="label-list"></label>
+          <div class="form-group input-group">
+            <input type="text" class="form-control modal-input input-list">
+            <button type="reset" class="btn btn-outline-danger btnReset"><i class="fas fa-undo-alt fa-2x"></i></button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer list-footer"></div>
+    </div>
+  </div>
+</div>
+
+  <!-- Alert -->
+  <div class="alert alert-danger fade-in" role="alert" hidden>
+    Please, enter more than 5 and less 15 characters !
+  </div>
+  <div class="alert alert-success fade-in" role="alert" hidden>
+    Your event has been create successfully.
+  </div>
+
+ <!-- Backdrop bd -->
+  <div class="backdrop" hidden></div>
+
+</div>
